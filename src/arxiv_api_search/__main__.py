@@ -1,4 +1,4 @@
-"""CLI entry point for arxiv-search."""
+"""CLI entry point for arxiv-api-search."""
 
 from __future__ import annotations
 
