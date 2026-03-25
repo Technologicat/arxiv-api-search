@@ -12,8 +12,6 @@ Built for scoping reviews and systematic literature searches.
 
 ## Installation
 
-Requires Python 3.10+.
-
 ```bash
 pdm install
 ```
