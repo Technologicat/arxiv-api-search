@@ -24,13 +24,13 @@ def main(argv: list[str] | None = None) -> None:
         nargs="?",
         type=Path,
         default=None,
-        help="File containing the boolean search expression",
+        help="Query file containing a boolean search expression. Alternative with -q.",
     )
     source.add_argument(
         "-q", "--query",
         type=str,
         default=None,
-        help='Boolean search expression, e.g. \'"LLM" AND "AI"\'',
+        help='Boolean search expression, e.g. \'"LLM" AND "AI"\'. Alternative with query file.',
     )
     ap.add_argument(
         "-o", "--output",
