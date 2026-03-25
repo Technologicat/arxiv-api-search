@@ -8,7 +8,6 @@ Precedence (lowest to highest): OR, AND/ANDNOT, atom.
 
 from __future__ import annotations
 
-import re
 from dataclasses import dataclass
 from enum import Enum, auto
 from typing import Union
