@@ -1,6 +1,7 @@
 # arxiv-api-search
 
 ![100% Python](https://img.shields.io/github/languages/top/Technologicat/arxiv-api-search)
+![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue)
 ![CI status](https://img.shields.io/github/actions/workflow/status/Technologicat/arxiv-api-search/tests.yml?branch=main)
 [![codecov](https://codecov.io/gh/Technologicat/arxiv-api-search/branch/main/graph/badge.svg)](https://codecov.io/gh/Technologicat/arxiv-api-search)
 ![license](https://img.shields.io/github/license/Technologicat/arxiv-api-search)
