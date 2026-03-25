@@ -16,7 +16,7 @@ pdm install
 ### From a query file
 
 ```bash
-arxiv-search query.txt -o results.bib
+arxiv-api-search query.txt -o results.bib
 ```
 
 The query file contains a boolean expression:
@@ -32,7 +32,7 @@ Blank lines are allowed for readability.
 ### Inline query
 
 ```bash
-arxiv-search -q '"quantum computing" AND "error correction"' -o results.bib
+arxiv-api-search -q '"quantum computing" AND "error correction"' -o results.bib
 ```
 
 ### Options

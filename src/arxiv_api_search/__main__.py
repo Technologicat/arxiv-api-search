@@ -15,7 +15,7 @@ MAX_ARXIV_RESULTS = 30_000
 
 def main(argv: list[str] | None = None) -> None:
     ap = argparse.ArgumentParser(
-        prog="arxiv-search",
+        prog="arxiv-api-search",
         description="Search arXiv with a boolean expression and export results as BibTeX.",
     )
     source = ap.add_mutually_exclusive_group(required=True)

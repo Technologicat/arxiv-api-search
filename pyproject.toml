@@ -22,7 +22,7 @@ build-backend = "pdm.backend"
 distribution = true
 
 [project.scripts]
-arxiv-search = "arxiv_api_search.__main__:main"
+arxiv-api-search = "arxiv_api_search.__main__:main"
 
 [dependency-groups]
 dev = [
