@@ -23,3 +23,8 @@ distribution = true
 
 [project.scripts]
 arxiv-search = "arxiv_api_search.__main__:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+]

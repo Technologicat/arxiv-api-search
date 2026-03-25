@@ -18,16 +18,25 @@ def main(argv: list[str] | None = None) -> None:
         prog="arxiv-search",
         description="Search arXiv with a boolean expression and export results as BibTeX.",
     )
-    ap.add_argument(
+    source = ap.add_mutually_exclusive_group(required=True)
+    source.add_argument(
         "query_file",
+        nargs="?",
         type=Path,
+        default=None,
         help="File containing the boolean search expression",
+    )
+    source.add_argument(
+        "-q", "--query",
+        type=str,
+        default=None,
+        help='Boolean search expression, e.g. \'"LLM" AND "AI"\'',
     )
     ap.add_argument(
         "-o", "--output",
         type=Path,
         default=None,
-        help="Output BibTeX file (default: <query_file>.bib)",
+        help="Output BibTeX file (default: <query_file>.bib, or results.bib with -q)",
     )
     ap.add_argument(
         "--max-results",
@@ -38,9 +47,12 @@ def main(argv: list[str] | None = None) -> None:
     args = ap.parse_args(argv)
 
     # --- Read and parse the query ---
-    query_text = args.query_file.read_text().strip()
+    if args.query is not None:
+        query_text = args.query.strip()
+    else:
+        query_text = args.query_file.read_text().strip()
     if not query_text:
-        print("Error: query file is empty.", file=sys.stderr)
+        print("Error: query is empty.", file=sys.stderr)
         sys.exit(1)
 
     try:
@@ -69,7 +81,12 @@ def main(argv: list[str] | None = None) -> None:
 
     # --- Write BibTeX ---
     bibtex = entries_to_bibtex(entries)
-    output_path = args.output or args.query_file.with_suffix(".bib")
+    if args.output:
+        output_path = args.output
+    elif args.query_file:
+        output_path = args.query_file.with_suffix(".bib")
+    else:
+        output_path = Path("results.bib")
     output_path.write_text(bibtex, encoding="utf-8")
     print(f"Wrote {len(entries)} entries to {output_path}", file=sys.stderr)
 
