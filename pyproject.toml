@@ -28,4 +28,5 @@ arxiv-api-search = "arxiv_api_search.__main__:main"
 dev = [
     "pytest>=9.0.2",
     "flake8>=7.3.0",
+    "pytest-cov>=7.1.0",
 ]

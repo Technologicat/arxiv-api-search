@@ -1,5 +1,11 @@
 # arxiv-api-search
 
+![100% Python](https://img.shields.io/github/languages/top/Technologicat/arxiv-api-search)
+![CI status](https://img.shields.io/github/actions/workflow/status/Technologicat/arxiv-api-search/tests.yml?branch=main)
+[![codecov](https://codecov.io/gh/Technologicat/arxiv-api-search/branch/main/graph/badge.svg)](https://codecov.io/gh/Technologicat/arxiv-api-search)
+![license](https://img.shields.io/github/license/Technologicat/arxiv-api-search)
+![open issues](https://img.shields.io/github/issues/Technologicat/arxiv-api-search)
+
 Search arXiv using boolean expressions and export the results as BibTeX.
 Built for scoping reviews and systematic literature searches.
 
