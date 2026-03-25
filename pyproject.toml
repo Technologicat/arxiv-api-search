@@ -1,0 +1,25 @@
+[project]
+name = "arxiv-api-search"
+version = "0.1.0"
+description = "Search arXiv with boolean expressions, export results as BibTeX."
+authors = [
+    {name = "Juha Jeronen", email = "juha.m.jeronen@gmail.com"},
+]
+dependencies = [
+    "requests>=2.31",
+    "feedparser>=6.0",
+    "bibtexparser>=2.0.0b7",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+distribution = true
+
+[project.scripts]
+arxiv-search = "arxiv_api_search.__main__:main"
