@@ -6,6 +6,8 @@ import argparse
 import sys
 from pathlib import Path
 
+from importlib.metadata import version
+
 from .bibtex import entries_to_bibtex
 from .parser import parse_query
 from .query import node_to_query, search
@@ -17,6 +19,11 @@ def main(argv: list[str] | None = None) -> None:
     ap = argparse.ArgumentParser(
         prog="arxiv-api-search",
         description="Search arXiv with a boolean expression and export results as BibTeX.",
+    )
+    ap.add_argument(
+        "-V", "--version",
+        action="version",
+        version=f"%(prog)s {version('arxiv-api-search')}",
     )
     source = ap.add_mutually_exclusive_group(required=True)
     source.add_argument(
