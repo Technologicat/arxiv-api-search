@@ -10,6 +10,8 @@
 Search arXiv using boolean expressions and export the results as BibTeX.
 Built for scoping reviews and systematic literature searches.
 
+:exclamation: *Superseded by `raven-arxiv-search`, see [Raven](https://github.com/Technologicat/raven). This standalone version will remain available, but will not receive further updates.*
+
 ## Installation
 
 ```bash
