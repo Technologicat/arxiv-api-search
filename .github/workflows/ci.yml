@@ -1,4 +1,13 @@
-name: Tests
+# Install dependencies, lint, run the test suite across the supported Python
+# versions, and check that the distribution still builds.
+#
+# This project is retained as a minimal pure-Python reference for the fleet's
+# current PDM/lint/CI setup, so the workflow is meant to be read and copied.
+# It has no `publish` job: the package is not on PyPI and has no trusted
+# publisher configured, and a publish job that cannot run is a worse example
+# than an absent one. See chandra's ci.yml for that half.
+
+name: CI
 
 on:
   push:
@@ -50,3 +59,18 @@ jobs:
     - name: Run tests
       run: |
         pdm run pytest tests/ -v
+
+  build-dist:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.14"
+      - run: pip install build
+      - run: python -m build
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: dist
+          path: dist/
