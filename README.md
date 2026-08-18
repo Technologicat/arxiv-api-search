@@ -15,18 +15,22 @@ Built for scoping reviews and systematic literature searches.
 > which is where the development continues. This standalone version remains available and
 > keeps working, but receives no further updates.
 >
-> Raven has since grown a whole family of arXiv tools around it, so moving over gains you
-> more than the search itself:
+> Raven has since grown a whole family of arXiv tools around it, and they compose, so moving
+> over gains you rather more than the search itself:
 >
 > - **`raven-arxiv-search`** — this tool's successor: boolean-expression search against the
 >   arXiv API, with automatic pagination and rate limiting, exported as BibTeX.
-> - **`raven-arxiv-download`** — fetches the PDFs for a list of arXiv IDs, naming each file
->   from the paper's own metadata.
+> - **`raven-arxiv-download`** — fetches PDFs and names each file from the paper's own
+>   metadata. It takes IDs on the command line, or reads them straight out of a BibTeX file
+>   with `--from-bib`, so a search result feeds it directly. Its `--save-bib` writes the
+>   bibliography at the same time: downloading already requires the metadata in order to name
+>   the files, so you get it for no extra requests and no extra rate-limit waiting — one tool
+>   instead of two when you want both.
 > - **`raven-arxiv2id`** — reads a directory of PDFs and extracts the arXiv IDs from their
 >   filenames, handling all three arXiv ID eras and keeping the latest version of each paper.
-> - **`raven-arxiv2bib`** — turns a list of arXiv IDs into BibTeX, completing the path
->   `raven-arxiv2id` starts: a folder of downloaded papers becomes a searchable bibliography
->   in two piped commands.
+> - **`raven-arxiv2bib`** — turns a list of arXiv IDs into BibTeX. Paired with
+>   `raven-arxiv2id` it works in the other direction from the above: a folder of papers you
+>   already have becomes a searchable bibliography, in two piped commands.
 
 ## Installation
 
