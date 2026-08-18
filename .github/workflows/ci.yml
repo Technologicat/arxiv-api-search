@@ -1,11 +1,13 @@
 # Install dependencies, lint, run the test suite across the supported Python
 # versions, and check that the distribution still builds.
 #
-# This project is retained as a minimal pure-Python reference for the fleet's
-# current PDM/lint/CI setup, so the workflow is meant to be read and copied.
-# It has no `publish` job: the package is not on PyPI and has no trusted
-# publisher configured, and a publish job that cannot run is a worse example
-# than an absent one. See chandra's ci.yml for that half.
+# This project is retired: its functionality lives on in Raven as
+# `raven-arxiv-search`, which has moved on independently. The workflow is kept
+# so the repository does not rot silently, not as something to copy — for a
+# current pure-Python example, read chandra's ci.yml, which is maintained.
+#
+# There is no `publish` job: the package is not on PyPI and has no trusted
+# publisher configured, so such a job could only ever fail.
 
 name: CI
 

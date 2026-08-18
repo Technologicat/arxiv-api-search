@@ -10,7 +10,23 @@
 Search arXiv using boolean expressions and export the results as BibTeX.
 Built for scoping reviews and systematic literature searches.
 
-:exclamation: *Superseded by `raven-arxiv-search`, see [Raven](https://github.com/Technologicat/raven). This standalone version will remain available, but will not receive further updates.*
+> [!IMPORTANT]
+> **Superseded by `raven-arxiv-search`** in [Raven](https://github.com/Technologicat/raven),
+> which is where the development continues. This standalone version remains available and
+> keeps working, but receives no further updates.
+>
+> Raven has since grown a whole family of arXiv tools around it, so moving over gains you
+> more than the search itself:
+>
+> - **`raven-arxiv-search`** — this tool's successor: boolean-expression search against the
+>   arXiv API, with automatic pagination and rate limiting, exported as BibTeX.
+> - **`raven-arxiv-download`** — fetches the PDFs for a list of arXiv IDs, naming each file
+>   from the paper's own metadata.
+> - **`raven-arxiv2id`** — reads a directory of PDFs and extracts the arXiv IDs from their
+>   filenames, handling all three arXiv ID eras and keeping the latest version of each paper.
+> - **`raven-arxiv2bib`** — turns a list of arXiv IDs into BibTeX, completing the path
+>   `raven-arxiv2id` starts: a folder of downloaded papers becomes a searchable bibliography
+>   in two piped commands.
 
 ## Installation
 
